@@ -80,27 +80,57 @@ public class MazeServiceImpl implements MazeService {
             }
             tempMaze[coordinate.getX()][coordinate.getY()] = "4";
         }
+        logger.info(toString(tempMaze));
         logger.info(toString(maze, tempMaze));
     }
 
     public String toString(Maze maze, String[][] mazeArray) {
         StringBuilder result = new StringBuilder(getWidth(maze.getMaze()) * (getHeight(maze.getMaze()) + 1));
+        result.append('\n');
         for (int row = 0; row < getHeight(maze.getMaze()); row++) {
             for (int col = 0; col < getWidth(maze.getMaze()); col++) {
-                if (mazeArray[row][col].equals("0")) {
-                    result.append(' ');
-                } else if (mazeArray[row][col].equals("1")) {
-                    result.append('#');
-                } else if (mazeArray[row][col].equals("2")) {
-                    result.append('S');
-                } else if (mazeArray[row][col].equals("3")) {
-                    result.append('E');
-                } else {
-                    result.append('.');
+                switch (mazeArray[row][col]) {
+                    case "0":
+                        result.append(' ');
+                        break;
+                    case "1":
+                        result.append('#');
+                        break;
+                    case "2":
+                        result.append('S');
+                        break;
+                    case "3":
+                        result.append('E');
+                        break;
+                    default:
+                        result.append('.');
+                        break;
                 }
             }
             result.append('\n');
         }
+        return result.toString();
+    }
+
+    public String toString(String[][] mazeArray) {
+        StringBuilder result = new StringBuilder(mazeArray[0].length *  mazeArray.length + 1);
+        result.append("(");
+        for (int row = 0; row < mazeArray.length; row++) {
+            for (int col = 0; col < mazeArray[0].length; col++) {
+                switch (mazeArray[row][col]) {
+                    case "2":
+                        result.append("(").append(row).append(":").append(col).append("(S))");
+                        break;
+                    case "3":
+                        result.append("(").append(row).append(":").append(col).append("(G))");
+                        break;
+                    case "4":
+                        result.append("(").append(row).append(":").append(col).append(")");
+                        break;
+                }
+            }
+        }
+        result.append(")");
         return result.toString();
     }
 }
