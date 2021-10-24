@@ -19,6 +19,7 @@ import java.util.List;
 @SpringBootApplication
 public class MazeSolverApplication implements ApplicationRunner {
 
+    private static final String CLASSPATH_FILES_MAZE_START_AT_EDGE_CSV = "classpath:files/mazeForTest.csv";
     Logger logger = LoggerFactory.getLogger(MazeSolverApplication.class);
 
     @Autowired
@@ -34,7 +35,7 @@ public class MazeSolverApplication implements ApplicationRunner {
 
     @Override
     public void run(ApplicationArguments args) throws Exception {
-        Maze maze = mazeService.createMaze(ResourceUtils.getFile("classpath:files/maze2.csv").getPath());
+        Maze maze = mazeService.createMaze(ResourceUtils.getFile(CLASSPATH_FILES_MAZE_START_AT_EDGE_CSV).getPath());
         List<Rectangle> rectangleList = dfsService.solve(maze);
         logger.info(rectangleList.toString());
         mazeService.printPath(maze, rectangleList);

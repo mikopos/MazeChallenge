@@ -24,10 +24,8 @@ public class DfsServiceImpl implements DfsService {
     @Override
     public List<Rectangle> solve(Maze maze) {
         List<Rectangle> path = new ArrayList<>();
-        if (explore(maze, maze.getStart()
-                        .getX(),
-                maze.getStart()
-                        .getY(),
+        if (explore(maze, maze.getStart().getX(),
+                maze.getStart().getY(),
                 path)) {
             return path;
         }

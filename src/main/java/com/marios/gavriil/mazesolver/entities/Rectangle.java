@@ -8,6 +8,7 @@ import lombok.*;
 @RequiredArgsConstructor
 @AllArgsConstructor
 @ToString
+@EqualsAndHashCode
 public class Rectangle {
 
     private final int x;
