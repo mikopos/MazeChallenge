@@ -5,8 +5,6 @@ import com.marios.gavriil.mazesolver.entities.Rectangle;
 import com.marios.gavriil.mazesolver.services.DfsService;
 import com.marios.gavriil.mazesolver.services.MazeService;
 import lombok.RequiredArgsConstructor;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.boot.SpringApplication;

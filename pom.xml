@@ -10,7 +10,7 @@
     </parent>
     <groupId>com.marios.gavriil</groupId>
     <artifactId>MazeSolver</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>1.0.0</version>
     <name>MazeSolver</name>
     <description>MazeSolver</description>
     <properties>
@@ -29,21 +29,9 @@
         </dependency>
 
         <dependency>
-            <groupId>com.opencsv</groupId>
-            <artifactId>opencsv</artifactId>
-            <version>5.5.2</version>
-        </dependency>
-
-        <dependency>
             <groupId>org.spockframework</groupId>
-            <artifactId>spock-core</artifactId>
+            <artifactId>spock-spring</artifactId>
             <version>2.0-groovy-3.0</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.codehaus.groovy</groupId>
-            <artifactId>groovy-all</artifactId>
-            <version>2.4.7</version>
             <scope>test</scope>
         </dependency>
 
@@ -67,6 +55,24 @@
                         </exclude>
                     </excludes>
                 </configuration>
+            </plugin>
+
+            <plugin>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>3.0.0-M4</version>
+                <configuration>
+                    <useFile>false</useFile>
+                    <includes>
+                        <include>**/*Spec.java</include>
+                    </includes>
+                </configuration>
+                <dependencies>
+                    <dependency>
+                        <groupId>org.apache.maven.surefire</groupId>
+                        <artifactId>surefire-junit-platform</artifactId>
+                        <version>3.0.0-M4</version>
+                    </dependency>
+                </dependencies>
             </plugin>
 
             <plugin>

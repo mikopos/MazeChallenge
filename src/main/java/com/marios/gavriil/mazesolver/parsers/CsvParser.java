@@ -1,6 +1,5 @@
 package com.marios.gavriil.mazesolver.parsers;
 
-import com.opencsv.CSVReader;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
@@ -11,6 +10,9 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Csv parser utility class
+ */
 @Component
 public class CsvParser {
 
@@ -18,6 +20,13 @@ public class CsvParser {
 
     Logger logger = LoggerFactory.getLogger(CsvParser.class);
 
+    /**
+     * Method that parses a csv file and returns
+     * a 2D String array, that represents the maze
+     *
+     * @param path      path of the csv file
+     * @return          2D String array representing the maze
+     */
     public String [][] parse (String path) {
         String[][] array = null;
         try {
