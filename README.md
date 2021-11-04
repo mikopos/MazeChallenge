@@ -4,7 +4,7 @@ Maze solver is a very common project that is based on [Graph Theory](https://en.
 In this implementation, it takes a .csv file as argument in order to create the graph and then it uses a 
 [DFS(Depth-First search) algorithm](https://en.wikipedia.org/wiki/Depth-first_search) in order to find its solution.
 
-##Technical Design
+## Technical Design
 The imported .csv file contains values of 
 * 0 for free space
 * 1 for walls
@@ -25,20 +25,20 @@ until the DFS finds the solution path or the stack gets empty.
 
 These instructions will help you to build and run the project.
 
-###Prerequisites
+### Prerequisites
 * JDK 11
 * Maven
 
-###Build project
+### Build project
 
 * Navigate inside project folder
 * Run command ```mvn clean install```
 
-###Run project
+### Run project
 * Navigate inside project folder
 * Run command ```mvn spring-boot:run```
 
-##Built With
+## Built With
 
 * [JDK 11](https://www.oracle.com/java/technologies/javase/11all-relnotes.html)
 * [SpringBoot](https://spring.io/projects/spring-boot)
